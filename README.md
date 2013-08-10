@@ -34,7 +34,7 @@ You should also create a file called `.dir-locals.el` in your project root with:
 Basic flymake configuration:
 
     (add-hook 'find-file-hook 'flymake-find-file-hook)
-    (setq flymake-no-changes-timeout 1)
+    (setq flymake-no-changes-timeout 10)
     (setq flymake-gui-warnings-enabled nil)
 
 Enable auto-complete globally

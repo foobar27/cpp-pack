@@ -9,9 +9,9 @@
     (if compile-commands
         (let* ((compile-file (gethash "file" compile-commands))
                (compile-directory (gethash "directory" compile-commands))
-               (compile-flags (mapconcat 'identity (cdr (butlast (split-string (gethash "command" compile-commands) " "))) " "))
+               (compile-flags (split-string (mapconcat 'identity (cdr (butlast (split-string (gethash "command" compile-commands) " "))) " ")))
                (temp-file (flymake-init-create-temp-buffer-copy 'flymake-create-temp-inplace))
-               (old-ac-flags ac-clang-cflags))
+               (old-ac-cflags ac-clang-cflags))
           (progn
             (setq ac-clang-cflags compile-flags)
             (if (not (eq old-ac-cflags compile-flags))
@@ -19,7 +19,7 @@
             (list "/usr/bin/clang++"
                   `("-fsyntax-only"
                     "-fno-color-diagnostics"
-                    ,@(split-string compile-flags " ")
+                    ,@compile-flags
                     ,temp-file)))))))
 
 (setq flymake-allowed-file-name-masks
