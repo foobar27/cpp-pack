@@ -1,0 +1,34 @@
+* Basic Features
+- [ ] emacs-live pack structure
+- [ ] fundamentals
+  - [ ] check if in valid project first
+  - [ ] caching of compile-commands for each file
+  - [ ] parse depend.internal
+  - [ ] guess compile arguments for header files
+- [-] auto-complete
+  - [ ] add clang-async-autocomplete library
+  - [X] use clang-complete configuration from site
+  - [ ] set compile flags from flymake
+- [ ] follow include paths
+  - [ ] use -I flags to follow include paths
+- [ ] flymake
+  - [ ] parsing of clang warnings (errors seem to be correct)
+  - [ ] enable for header files too
+- [ ] c++ style library
+  - [ ] add google style lib
+  - [ ] webkit
+  - [ ] qtcreator
+
+* Additional Features
+- [ ] multiple build directories
+- [ ] automatically generate .dir-locals.el
+- [ ] code navigation
+- [ ] gdb configuration
+- [ ] doxygen integration
+- [ ] sourcepair.el
+- [ ] integrate into imenu
+- [ ] code folding
+  - [ ] http://www.emacswiki.org/emacs/CategoryOutline
+- [ ] support more compilers
+  - [ ] gcc
+  - [ ] icc
